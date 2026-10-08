@@ -39,11 +39,11 @@ def index_view():
     offset_value = randrange(quantity)
     # ...и определить случайный объект.
     opinion = Opinion.query.offset(offset_value).first()
-    return render_template('index.html', opinion=opinion)
+    return render_template('opinion.html', opinion=opinion)
 
 @app.route('/add')
 def add_opinion_view():
-    return 'Страница в разработке!'
+    return render_template('add_opinion.html')
 
 if __name__ == '__main__':
     app.run()
